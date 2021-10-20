@@ -93,3 +93,18 @@ this:
 change to:
 
 		button.SetEvent(__mem_func__(self.OnClick),i)
+
+
+in class RadioButtonGroup:
+
+search this:
+
+	def __del__(self):
+		for button, ue, de in self.buttonGroup:
+			button.__del__()
+
+change to:
+
+	def __del__(self):
+		self.buttonGroup = []
+		self.selectedBtnIdx = -1
