@@ -83,3 +83,13 @@ replace the function with:
 			selectEvent(btnIdx)
 
 		button.Down()
+
+in def AddButton(self, button, selectEvent, unselectEvent):
+	
+this:
+	
+		button.SetEvent(lambda : self.OnClick(i))
+
+change to:
+
+		button.SetEvent(__mem_func__(self.OnClick),i)
